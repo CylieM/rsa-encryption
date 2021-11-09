@@ -64,9 +64,6 @@ for (o=0;o<=9;o++){
 }
 //THIS PART IS SUPPOSED TO convert the array of numbers back into character of strings BUT I RAN OUT OF idea and patience so I'm gonna to take the L
 
-/// WALL OF SHAME  ///
-
-
     printf("\nOriginal Message Sent = %c", p);
   
     return 0;
