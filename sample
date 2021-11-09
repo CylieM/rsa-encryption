@@ -26,7 +26,7 @@ int main()
     double d = 223;
     char message[]="ENCRYPTION";
     printf("Message data = %c", message);
-/// turns characters to numbers or something, idk found it on stackoverflow
+/// turns characters to numbers 
 int n = -1;
 static const char * const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 char *p = strchr(alphabet, toupper((unsigned char)message));
@@ -34,7 +34,7 @@ if (p){
         n = p - alphabet;
  }
 
-//ENCRYPTIONNNNNNNN
+//ENCRYPTION
 ///searches every individual characters on the message string and multiplies them to the power of e
 int i,j,k,o;
 for(i=0;i<=9;i++){
@@ -52,7 +52,7 @@ printf("\nEncrypted data = %c", p);
 
 
  int power=1;
-///DECRYPTIONNNNNN
+///DECRYPTION
 ///searches every cipher text on the message string and multiplies them to the power of 223 (wtf)
 for(k=0;k<=223;k++){
  power=power*p[k];
