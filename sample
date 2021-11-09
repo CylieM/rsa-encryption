@@ -1,7 +1,73 @@
-P = 11, Q  = 13
-n= P*Q = 143
-e=7
-public key n and e  (143,7)
-private key n and d  (143,223)
-encrypt lNYECaHS(N
+//P = 11, Q  = 13
+//n= P*Q = 143
+//e=7
+//public key n and e  (143,7)
+//private key n and d  (143,223)
+//ENCRYPTION = lNYECaHS(N
+//RASTAMAN = EA<-HAMAN
+/////////DISCLAIMER : THIS CODE DOES NOT WORK (LOL) this is more of like a complicated version of pseudo code
+//////// apologies in advance since I am having a hard time in wrapping around my head at how to generate a key on code form (I'm talking about the encryption part).///////////
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double p = 11;
+    double q = 13;
+    double n = p*q;
+    double e = 7;
+    double phi = (p-1)*(q-1);
+    while (e < phi)
+    {
+        if (gcd(e, phi)==1)
+            break;
+        else
+            e++;
+    }
+    double d = 223;
+    char message[]="ENCRYPTION";
+    printf("Message data = %c", message);
+/// turns characters to numbers or something, idk found it on stackoverflow
+int n = -1;
+static const char * const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+char *p = strchr(alphabet, toupper((unsigned char)message));
+if (p){
+        n = p - alphabet;
+ }
 
+//ENCRYPTIONNNNNNNN
+///searches every individual characters on the message string and multiplies them to the power of e
+int i,j,k,o;
+for(i=0;i<=9;i++){
+p[i] = p[i] * p[i] * p[i] * p[i] * p[i] * p[i] * p[i];
+}
+
+///turns the powered message into modulo of 143
+for (j=0;j<=9;j++){
+ p[j] = p[j] % 143;
+}
+
+printf("\nEncrypted data = %c", p);
+
+
+
+
+ int power=1;
+///DECRYPTIONNNNNN
+///searches every cipher text on the message string and multiplies them to the power of 223 (wtf)
+for(k=0;k<=223;k++){
+ power=power*p[k];
+ p[k]=power;
+}
+///turns the powered message into modulo of 143
+for (o=0;o<=9;o++){
+ p[o] = p[o] % 143;
+}
+//THIS PART IS SUPPOSED TO convert the array of numbers back into character of strings BUT I RAN OUT OF idea and patience so I'm gonna to take the L
+
+/// WALL OF SHAME  ///
+
+
+    printf("\nOriginal Message Sent = %c", p);
+  
+    return 0;
+}
